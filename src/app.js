@@ -1,12 +1,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const morgan = require('morgan')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const mongoUrl = require('./config/dev').mongo_url
 const app = express()
 const PORT = process.env.PORT || 4000
-
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -33,7 +31,6 @@ const start = async function () {
 
     } catch (e) {
         console.log(`Error` + e)
-        console.log('Error Start Server')
         process.exit(1)
     }
 }
